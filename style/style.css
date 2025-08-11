@@ -5,3 +5,276 @@
   font-weight: normal;
   font-style: normal;
 }
+
+:root {
+  /* 색상 */
+  --bg-color: #f2e9d8;
+  --point-color: #d97652;
+  --font-color-primary: #263140;
+  --font-color-base: #000;
+  --font-color-secondary: #fff;
+
+  /* 글자 크기 */
+  --font-size-base: 1.6rem;
+  --font-size-s: 1.4rem;
+  --font-size-m: 2.4rem;
+  --font-size-l: 3.6rem;
+  --font-size-xl: 4.8rem;
+}
+
+/* util */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  min-height: 100vh;
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif;
+  font-size: var(--font-size-s); /* 미디어 쿼리로 바꾸기 */
+}
+
+button {
+  padding: 1.1rem 2.4rem;
+  border: none;
+  border-radius: 4rem;
+  background-color: var(--point-color);
+  font-size: var(--font-size-s);
+  font-weight: bold;
+  color: var(--font-color-secondary);
+}
+
+/* header 영역 */
+/* header -> 상단 고정, nav바, flex, space-between, background-color */
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--bg-color);
+}
+
+.blog-logo {
+  margin: 2.4rem 2rem;
+}
+
+.nav-bar {
+  margin: 2.2rem 2rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.menu {
+  position: fixed;
+  width: 28.9rem;
+  height: 100vh;
+  right: -28.9rem; /* 화면 밖으로 숨김 */
+  transition: all 300ms;
+  z-index: 1;
+  top: 0;
+  box-sizing: border-box;
+  background-color: var(--font-color-primary);
+}
+
+/* :focus, :hover 시 근처에 있는 menu가 화면으로 다시 나옴 */
+.nav-bar:focus + .menu {
+  right: 0;
+}
+
+/* section1 영역 */
+/* section1 -> background-color, flex, column, 가운데 정렬, 살짝 사진 잘림(overflow-y: hidden), gap: 3rem */
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
+  padding-top: 4rem;
+  background-color: var(--bg-color);
+  font-size: var(--font-size-m);
+}
+
+.intro-section h3 {
+  width: calc(100% - 12.6rem);
+  font-size: var(--font-size-m);
+  font-weight: bold;
+}
+
+.intro-section p {
+  width: calc(100% - 11rem);
+  font-size: var(--font-size-s);
+}
+
+/* .download-btn {
+  padding: 1.1rem 2.4rem;
+  border: none;
+  border-radius: 4rem;
+  background-color: var(--point-color);
+  font-size: var(--font-size-s);
+  font-weight: bold;
+  color: var(--font-color-secondary);
+} */
+
+.intro-section img {
+  width: 19.7rem;
+  position: relative;
+  top: 5rem;
+}
+
+/* section2 -> flex, column, 텍스트 정렬 있는 것도 있고 없는 것도 있음
+                사진 3개 있는 곳은 가로로 넘겨볼 수 있도록, gird-template-columns: repeat(3, 1fr) */
+.about-section {
+  /* width: calc(100% - 6.4rem); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+  padding: 0 3.2rem;
+  background-color: pink;
+}
+
+.about-section h3 {
+  font-size: var(--font-size-m);
+  font-weight: bold;
+}
+
+.about-section p {
+  font-size: var(--font-size-s);
+}
+
+.first-content h3 {
+  margin-bottom: 2rem;
+}
+
+.second-content {
+  text-align: center;
+}
+
+.second-content h3,
+span {
+  font-weight: bold;
+  color: var(--point-color);
+}
+
+.second-content h3 {
+  margin-bottom: 3rem;
+}
+
+.img-cont {
+  width: 100%;
+  overflow-x: scroll;
+  border: 2px solid red;
+}
+
+.more-cont {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 3rem;
+}
+
+.more-cont button {
+  align-self: end;
+}
+
+/* aside 영역 */
+/* aside -> 박스형으로 만듬,  background-image로 고양이 사진, 약간 겹쳐지는건 position, z-index */
+aside {
+  margin-top: 5rem;
+  /* background-image로 고양이 삽입 */
+}
+
+.subscribe-cont {
+  box-sizing: border-box;
+  width: calc(100% - 6.4rem);
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.8rem;
+  background-color: var(--font-color-primary);
+  color: var(--font-color-secondary);
+}
+
+.subscribe-cont h3 {
+  margin: 3.6rem 6.8rem 2rem 0;
+
+  font-size: var(--font-size-m);
+  font-weight: bold;
+}
+
+.subscribe-cont p {
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+.subscribe-cont input {
+  border: none;
+  border-radius: 6rem;
+  padding: 1.2rem 1.6rem;
+  margin-bottom: 2rem;
+  background: var(--font-color-secondary) url(../images/mail.svg) no-repeat
+    1.6rem center;
+  background-size: 1.8rem;
+  padding-left: 4rem;
+}
+
+.subscribe-cont button {
+  align-self: end;
+  margin-bottom: 3rem;
+}
+
+/* btn -> 스크롤 버튼, 위치 고정 fixed */
+.scroll-to-top {
+  display: none;
+}
+
+/* dialog -> 모달창(모바일 버전), 배경이미지(contain?, 고양이 얼굴, 텍스트1, 텍스트2)를 위에다가 배치하고 하단에는 버튼 */
+
+/* footer -> 로고, sns를 column으로 왼쪽 배치, nav도 column 오른쪽 배치 */
+footer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.footer-left ul {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.footer-left ul li {
+  list-style: none;
+  background-color: var(--point-color);
+  border-radius: 50%;
+  padding: 0.685rem;
+}
+
+.footer-right ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-right a {
+  text-decoration: none;
+  color: #767676;
+}
+
+/* media 쿼리로 390 -> 1920px로 반응형 구현 */
+/* 1920px -> 모달형 image는 cover로? */
