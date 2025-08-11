@@ -28,7 +28,7 @@
           <li><a href="#">About</a></li>
           <li><a href="#">Support</a></li>
         </ul>
-        <button type="button" class="download-btn">Download</button>
+        <button type="button" class="menu-download-btn">Download</button>
       </nav>
     </header>
 
@@ -100,8 +100,9 @@
             type="email"
             name="email"
             placeholder="Enter your e-mail address"
+            autocomplete="off"
           />
-          <button id="open-modal" type="submit">Subscribe</button>
+          <button id="showBtn" type="submit">Subscribe</button>
         </div>
         <!-- 고양이 사진은 backgroun-image로 설정 -->
       </aside>
@@ -111,11 +112,11 @@
       </button>
 
       <!------ 모달창 ------>
-      <dialog>
+      <dialog id="modal">
         <img src="./images/cat-subscribe.png" alt="축하하는 고양이" />
         <p>Thank you!</p>
         <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
-        <button>OK! I Love HODU</button>
+        <button id="closeBtn" type="button">OK! I Love HODU</button>
       </dialog>
     </main>
 
@@ -157,5 +158,21 @@
         </ul>
       </div>
     </footer>
+
+    <script>
+      const dialog = document.getElementById("modal");
+      const showDialogBtn = document.getElementById("showBtn");
+      const closeBtn = document.getElementById("closeBtn");
+
+      showDialogBtn.addEventListener("click", () => {
+        dialog.showModal();
+        console.log("모달창 열림");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        dialog.close();
+        console.log("모달창 닫힘");
+      });
+    </script>
   </body>
 </html>

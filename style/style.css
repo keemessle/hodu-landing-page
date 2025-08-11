@@ -69,8 +69,9 @@ p {
 }
 
 /* header 영역 */
-/* header -> 상단 고정, nav바, flex, space-between, background-color */
 header {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -78,12 +79,15 @@ header {
 }
 
 .blog-logo {
+  width: 9.2rem;
+  height: auto;
   margin: 2.4rem 2rem;
 }
 
 .nav-bar {
   margin: 2.2rem 2rem;
   border: none;
+  padding: 0;
   background-color: transparent;
   cursor: pointer;
 }
@@ -120,7 +124,7 @@ header {
   gap: 3rem;
   text-align: left;
   list-style: none;
-  margin: 4.4rem auto 5rem 4rem;
+  margin: 4.4rem auto 5rem 5rem;
 }
 
 .menu a {
@@ -130,7 +134,7 @@ header {
   color: var(--font-color-secondary);
 }
 
-.download-btn {
+.menu-download-btn {
   width: 11.9rem;
   margin-left: 4rem;
 }
@@ -140,8 +144,7 @@ header {
   right: 0;
 }
 
-/* section1 영역 */
-/* section1 -> background-color, flex, column, 가운데 정렬, 살짝 사진 잘림(overflow-y: hidden), gap: 3rem */
+/* intro-section 영역 */
 .intro-section {
   display: flex;
   flex-direction: column;
@@ -149,6 +152,7 @@ header {
   text-align: center;
   gap: 3rem;
   padding-top: 4rem;
+  overflow-y: hidden;
   background-color: var(--bg-color);
   font-size: var(--font-size-m);
 }
@@ -164,33 +168,22 @@ header {
   font-size: var(--font-size-s);
 }
 
-/* .download-btn {
-  padding: 1.1rem 2.4rem;
-  border: none;
-  border-radius: 4rem;
-  background-color: var(--point-color);
-  font-size: var(--font-size-s);
-  font-weight: bold;
-  color: var(--font-color-secondary);
-} */
-
 .intro-section img {
   width: 19.7rem;
   position: relative;
-  top: 5rem;
+  top: 6rem;
+  margin-top: -6rem;
 }
 
-/* section2 -> flex, column, 텍스트 정렬 있는 것도 있고 없는 것도 있음
-                사진 3개 있는 곳은 가로로 넘겨볼 수 있도록, gird-template-columns: repeat(3, 1fr) */
+/* about-section 영역 */
 .about-section {
-  /* width: calc(100% - 6.4rem); */
+  max-width: 100vw; /* 부모 요소 너비 고정 */
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
   gap: 6rem;
   padding: 4rem 3.2rem;
-  /* overflow-x: hidden; */
-  /* background-color: pink; */
 }
 
 .about-section h3 {
@@ -225,21 +218,25 @@ span {
   margin-bottom: 3rem;
 }
 
-/* 해당 영역만 가로 스크롤 수정 */
 .img-cont {
   width: 100%;
-  overflow: hidden;
-  background-color: tan;
+  max-width: 100%;
+  overflow-x: auto;
+  box-sizing: border-box;
 }
 
 .img-cont ul {
-  /* white-space: nowrap; */
-  overflow-x: scroll;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem; /* 이미지 간 간격 */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: max-content;
 }
 
 .img-cont li {
-  display: inline-block;
-  /* margin-right: 2rem; */
+  flex: 0 0 auto; /* 크기 고정 -> 줄바꿈 방지 */
 }
 
 .img-cont img {
@@ -266,11 +263,9 @@ span {
 }
 
 /* aside 영역 */
-/* aside -> 박스형으로 만듬,  background-image로 고양이 사진, 약간 겹쳐지는건 position, z-index */
 aside {
   margin-top: 5rem;
   height: 70vh;
-  /* background-image로 고양이 삽입 */
   background: url(../images/img_5.png) no-repeat center top / contain;
   background-position: 50% 25rem;
 }
@@ -326,9 +321,41 @@ aside {
   display: none;
 }
 
-/* dialog -> 모달창(모바일 버전), 배경이미지(contain?, 고양이 얼굴, 텍스트1, 텍스트2)를 위에다가 배치하고 하단에는 버튼 */
+/* modal 영역 */
+/* 계속 노출되어 있는 상태이면 
+    dialog { display: none;} dialog[open] { display: flex; } 설정 */
+dialog {
+  width: 30rem;
+  height: 30rem;
+  background: #f2e9d8 url(../images/modal-bg-img.png) no-repeat top / contain;
+  border: none;
+  border-radius: 3rem;
+  display: flex;
+  flex: 0;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 20px 0px #00000033;
+}
 
-/* footer -> 로고, sns를 column으로 왼쪽 배치, nav도 column 오른쪽 배치 */
+dialog img {
+  width: 6rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin: 4rem auto 2.4rem;
+}
+
+dialog p:first-of-type {
+  font-size: var(--font-size-m);
+  font-weight: bold;
+  color: var(--point-color);
+  margin-bottom: 1rem;
+}
+
+dialog p:last-of-type {
+  margin: 0 5rem 2.8rem;
+}
+
+/* footer 영역 */
 footer {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -382,3 +409,21 @@ footer {
 
 /* media 쿼리로 390 -> 1920px로 반응형 구현 */
 /* 1920px -> 모달형 image는 cover로? */
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: var(--font-size-base);
+  }
+
+  .intro-section h3 {
+    width: calc(100% - 24rem);
+    font-size: var(--font-size-l);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (min-width: 1440px) {
+  /* 최대 크기 xl, 그 다음 l, 기본 base */
+}
