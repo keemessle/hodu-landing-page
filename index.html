@@ -12,7 +12,11 @@
     <!-- header 영역 -->
     <header>
       <h1>
-        <img src="./images/logo.svg" alt="호두 블로그 로고" class="blog-logo" />
+        <img
+          src="./images/logo.svg"
+          alt="호두 블로그 로고"
+          class="header-logo"
+        />
       </h1>
 
       <button type="button" class="nav-bar">
@@ -35,14 +39,16 @@
     <!-- main 영역 -->
     <main>
       <section class="intro-section">
-        <h2 class="sr-only">호두 블로그 인사말</h2>
-        <h3>Lorem Ipsum is simply dummy text of the printing and</h3>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown
-        </p>
-        <button type="button" class="download-btn">Download</button>
+        <div class="intro-content">
+          <h2 class="sr-only">호두 블로그 인사말</h2>
+          <h3>Lorem Ipsum is simply dummy text of the printing and</h3>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown
+          </p>
+          <button type="button" class="download-btn">Download</button>
+        </div>
         <img src="./images/box-cat.png" alt="박스를 뒤집어 쓴 호두" />
       </section>
 
@@ -50,13 +56,15 @@
         <h2 class="sr-only">호두 소개와 사진</h2>
         <div class="first-content">
           <img src="./images/img_4.jpg" alt="발라당 누운 호두" />
-          <h3>
-            Lorem Ipsum is simply dummy text of the printing and dummy text
-          </h3>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
-          </p>
+          <div class="first-text">
+            <h3>
+              Lorem Ipsum is simply dummy text of the printing and dummy text
+            </h3>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </p>
+          </div>
         </div>
         <div class="second-content">
           <h3>dummy text of the printing and dummy</h3>
@@ -81,8 +89,8 @@
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. <br />
             Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s, when an unknown Ipsum is simply dummy text of the
-            printing and typesetting industry.
+            the 1500s, when an unknown <br />
+            Ipsum is simply dummy text of the printing and typesetting industry.
           </p>
           <button type="button">Learn More</button>
         </div>
@@ -91,40 +99,36 @@
       <aside>
         <h2 class="sr-only">호두 블로그 구독하기</h2>
         <div class="subscribe-cont">
-          <h3>Subscribe to our Blog post</h3>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-          </p>
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your e-mail address"
-            autocomplete="off"
-          />
-          <button id="showBtn" type="submit">Subscribe</button>
+          <div class="subscribe-text">
+            <h3>Subscribe to our Blog post</h3>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+            </p>
+          </div>
+          <div class="subscribe-form">
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your e-mail address"
+              autocomplete="off"
+            />
+            <button id="showBtn" type="submit">Subscribe</button>
+          </div>
         </div>
-        <!-- 고양이 사진은 backgroun-image로 설정 -->
+        <img src="./images/img_5.png" alt="" class="hodu-bg-img" />
       </aside>
 
       <button type="button" class="scroll-to-top">
         <img src="./images/top-btn.svg" alt="맨 위로 올라가는 버튼" />
       </button>
-
-      <!------ 모달창 ------>
-      <dialog id="modal">
-        <img src="./images/cat-subscribe.png" alt="축하하는 고양이" />
-        <p>Thank you!</p>
-        <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
-        <button id="closeBtn" type="button">OK! I Love HODU</button>
-      </dialog>
     </main>
 
     <footer>
       <!-- gird 사용 -->
       <!-- 왼쪽 영역 -->
       <div class="footer-left">
-        <img src="./images/Logo-fin.svg" alt="호두 로고" class="logo" />
+        <img src="./images/Logo-fin.svg" alt="호두 로고" class="footer-logo" />
 
         <ul>
           <li>
@@ -158,6 +162,16 @@
         </ul>
       </div>
     </footer>
+
+    <!------ 모달창 ------>
+    <dialog id="modal">
+      <div class="modal-cont">
+        <img src="./images/cat-subscribe.png" alt="축하하는 고양이" />
+        <p>Thank you!</p>
+        <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
+        <button id="closeBtn" type="button">OK! I Love HODU</button>
+      </div>
+    </dialog>
 
     <script>
       const dialog = document.getElementById("modal");
