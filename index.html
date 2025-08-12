@@ -12,11 +12,9 @@
     <!-- header 영역 -->
     <header>
       <h1>
-        <img
-          src="./images/logo.svg"
-          alt="호두 블로그 로고"
-          class="header-logo"
-        />
+        <a href="#">
+          <img src="./images/logo.svg" alt="HODU" class="header-logo" />
+        </a>
       </h1>
 
       <button type="button" class="nav-bar">
@@ -107,8 +105,10 @@
             </p>
           </div>
           <div class="subscribe-form">
+            <label for="email" class="sr-only">이메일 주소</label>
             <input
               type="email"
+              id="email"
               name="email"
               placeholder="Enter your e-mail address"
               autocomplete="off"
@@ -119,16 +119,14 @@
         <img src="./images/img_5.png" alt="" class="hodu-bg-img" />
       </aside>
 
-      <button type="button" class="scroll-to-top">
-        <img src="./images/top-btn.svg" alt="맨 위로 올라가는 버튼" />
-      </button>
+      <button type="button" class="scroll-to-top"></button>
     </main>
 
     <footer>
       <!-- gird 사용 -->
       <!-- 왼쪽 영역 -->
       <div class="footer-left">
-        <img src="./images/Logo-fin.svg" alt="호두 로고" class="footer-logo" />
+        <img src="./images/Logo-fin.svg" alt="HODU" class="footer-logo" />
 
         <ul>
           <li>
@@ -166,7 +164,7 @@
     <!------ 모달창 ------>
     <dialog id="modal">
       <div class="modal-cont">
-        <img src="./images/cat-subscribe.png" alt="축하하는 고양이" />
+        <img src="./images/cat-subscribe.png" alt="축하하는 호두 얼굴" />
         <p>Thank you!</p>
         <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
         <button id="closeBtn" type="button">OK! I Love HODU</button>
