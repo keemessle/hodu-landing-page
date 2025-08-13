@@ -1,5 +1,10 @@
 <img width="60" height="62" alt="cat 1" src="https://github.com/user-attachments/assets/bb257937-9381-41e6-a16a-6ece91602341" />
 
+<img width="110" height="112" alt="Image" src="https://github.com/user-attachments/assets/ab73d96b-84ce-45ec-9d24-98ada9496f44" />
+
+<img width="60" height="62" alt="cat 1" src="https://github.com/user-attachments/assets/bb257937-9381-41e6-a16a-6ece91602341" />
+
+
 ## 👩🏻‍🏫 프로젝트 소개
 지금까지 배웠던 HTML과 CSS로 간단한 웹 페이지를 만드는 프로젝트입니다. <br />
 웹 페이지를 구현할 때, 중요시 해야하는 요구사항들을 고려하여 제작하였습니다.
@@ -55,9 +60,8 @@
 3️⃣ 접근성 고려
   * 목적이 없이 디자인을 목적으로 한 장식용 이미지는 alt="" 공백 처리
   * 접근성을 위해 input 태그 앞에 label 태그를 넣어주고 숨김처리
-
-
-<img width="1283" height="2251" alt="Group 4" src="https://github.com/user-attachments/assets/75920f17-9b1a-421c-948a-7e872c1f4a9e" />
+    
+<img width="800" height="1600" alt="Image" src="https://github.com/user-attachments/assets/837254ee-009c-47c8-99b5-a8e00b18be9b" />
 
 <br />
 
